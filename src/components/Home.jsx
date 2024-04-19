@@ -59,6 +59,7 @@ const Home = () => {
             <th>Actions</th>
           </tr>
         </thead>
+
         <tbody>
           {mediaArray.map((item) => (
             <MediaRow
