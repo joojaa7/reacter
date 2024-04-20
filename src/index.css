@@ -1,11 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ebebeb;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -32,14 +36,15 @@ nav ul {
 
 nav a {
   display: block;
-  color: white;
+  color: rgb(20, 0, 171);
   text-align: center;
   padding: 1rem;
   text-decoration: none;
 }
 
 nav a:hover {
-  background-color: #111111;
+  background-color: #376fc4;
+  color: white;
 }
 
 /* media item card */
@@ -76,26 +81,26 @@ td a {
 }
 
 /* media item dialog */
-dialog {
+/* dialog {
   position: fixed;
   top: 5%;
   height: 80dvh;
   background: rgba(0, 0, 0, 0.8);
   z-index: 9999;
   color: rgba(255, 255, 255, 0.87);
-}
+} */
 
-dialog img,
+/* dialog img,
 video {
   height: 70%;
   object-fit: contain;
-}
+} */
 
 /* single view */
-img,
+/* img,
 video {
   max-width: 100%;
-}
+} */
 
 /* Form */
 form {
@@ -133,7 +138,7 @@ form textarea {
   border-radius: 5px;
 }
 
-button {
+/* button {
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
@@ -141,4 +146,4 @@ button {
   color: white;
   border: none;
   cursor: pointer;
-}
+} */
