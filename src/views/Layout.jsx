@@ -7,6 +7,8 @@ const Layout = () => (
         <Link to="/">Etusivu 🏠</Link>
         <Link to="/profile">Profiili 😃</Link>
         <Link to="/upload">Upload</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/logout">Logout</Link>
       </nav>
     </header>
     <main>
