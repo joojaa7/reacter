@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAuthentication } from "../hooks/apiHooks";
 import useForm from "../hooks/formHooks";
+import Button from "../components/UI/Button"
 
 const LoginForm = () => {
   const { login } = useAuthentication();
@@ -52,7 +53,7 @@ const LoginForm = () => {
                          autoComplete="current-password"
                      />
                  </div>
-                 <button type="submit">Login</button>
+                 <Button type="submit" text="Login">Register</Button>
              </form>
          </>
      );

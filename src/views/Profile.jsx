@@ -22,9 +22,14 @@ export const Profile = () => {
       <Link to="/">Navigoi takaisin etusivulle</Link>
     </p>
     <div>
-      {user &&
+      {user &&(
+      <>
         <p>Käyttäjätunnus: {user.username}</p>
-      }
+        <p>Email: {user.email}</p>
+        <p>Luotu: {new Date(user.created_at).toLocaleString('fi-FI')}</p>
+      </>
+      )};
+
     </div>
   </div>
 }

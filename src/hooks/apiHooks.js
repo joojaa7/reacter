@@ -45,7 +45,19 @@ const useUser = () => {
     return tokenResult;
   };
 
-  return {getUserById, getUserByToken};
+  const register = async (inputs) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(inputs),
+    };
+
+    return await fetchData(import.meta.env.VITE_AUTH_API + '/users', options);
+  };
+
+  return {getUserById, getUserByToken, register};
 };
 
 const useAuthentication = () => {
