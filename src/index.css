@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: system-ui, sans-serif;
   line-height: 1.5;
@@ -133,7 +137,7 @@ form textarea {
   border-radius: 5px;
 }
 
-button {
+/*button {
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
@@ -141,4 +145,5 @@ button {
   color: white;
   border: none;
   cursor: pointer;
-}
+}*/
+
