@@ -1,26 +1,10 @@
-import {useEffect, useState} from 'react';
 import MediaRow from '../components/MediaRow';
-import { fetchData } from '../lib/fetchData';
-//import mediaArray from '../data/media';
+import { useMedia } from '../hooks/ApiHooks';
 
 const Home = () => {
   // const [selectedItem, setSelectedItem] = useState(null);
-  const [mediaArray, setMediaArray] = useState([]);
 
-
-  const getMedia = async () => {
-    const mediaResult = await fetchData(import.meta.env.VITE_MEDIA_API + '/media');
-
-    const mediaWithUser = await Promise.all(mediaResult.map(async media => {
-      const userResult = await fetchData(import.meta.env.VITE_AUTH_API + '/users/' + media.user_id);
-      return {...media, username: userResult.username};
-    }));
-    setMediaArray(mediaWithUser);
-  };
-
-  useEffect(() => {
-    getMedia();
-  }, [])
+  const {mediaArray} = useMedia();
 
   return (
     <>
@@ -29,7 +13,7 @@ const Home = () => {
         <thead>
           <tr>
             <th>Thumbnail</th>
-            <ht>Owner</ht>
+            <th>Owner</th>
             <th>Title</th>
             <th>Description</th>
             <th>Created</th>

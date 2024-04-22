@@ -19,7 +19,6 @@ const Single = () => {
   if(!item) {
     return <>Media not found</>
   }
-
   return <SingleView
     selectedItem={item}
     setSelectedItem={() => navigate(-1)}
