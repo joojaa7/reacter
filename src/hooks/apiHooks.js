@@ -31,7 +31,21 @@ const useUser = () => {
     );
     return userResult;
   };
-  return {getUserById};
+
+  const getUserByToken = async (token) => {
+    const options = {
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+    };
+    const tokenResult = await fetchData(
+      import.meta.env.VITE_AUTH_API + '/users/token',
+      options,
+    );
+    return tokenResult;
+  };
+
+  return {getUserById, getUserByToken};
 };
 
 const useAuthentication = () => {
