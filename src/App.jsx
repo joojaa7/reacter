@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './views/Home';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import { Profile } from './views/Profile';
+import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+import {Profile} from './views/Profile';
 import Upload from './views/Upload';
 import Layout from './views/Layout';
 import Single from './views/Single';

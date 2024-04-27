@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import Button from './UI/Button';
+import Button from './ui/Button';
 
 const SingleView = (props) => {
-  const { selectedItem, setSelectedItem } = props;
+  const {selectedItem, setSelectedItem} = props;
   const handleClick = () => {
     setSelectedItem(null);
   };
