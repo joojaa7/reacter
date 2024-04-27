@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
-const baseApiUrl = "http://127.0.0.1:3000"
 
 const Upload = () => {
   const [file, setFile] = useState(null)
@@ -21,9 +20,11 @@ const Upload = () => {
     formData.append("file", file)
     formData.append("name", name)
 
-    // send local state values (name, file) to a backend
-    const response = await fetch(`${baseApiUrl}/post-test`, {
+    const response = await fetch(import.meta.env.VITE_UPLOAD_SERVER + '/upload', {
       method: "post",
+      headers : {
+        Authorization: 'Bearer ' + localStorage.getItem('token'),
+      },
       body: formData
     })
 
@@ -36,7 +37,7 @@ const Upload = () => {
 
   return <>
   {apiResult !== null && <div>
-    <img src={`${baseApiUrl}/${apiResult.file.path}`} />
+    <img src={`http://10.120.32.94/upload/uploads/${apiResult.data.filename}`} />
     </div>}
     <form onSubmit={handleSubmit}>
       <input
