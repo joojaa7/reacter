@@ -1,9 +1,9 @@
-import { useAuthentication } from "../hooks/apiHooks";
+import { useUser } from "../hooks/apiHooks";
 import useForm from "../hooks/formHooks";
 import Button from "../components/UI/Button"
 
 const RegisterForm = () => {
-  const { register } = useAuthentication();
+  const { register } = useUser();
   // const  navigate  = useNavigate();
 
   const initValues = {
