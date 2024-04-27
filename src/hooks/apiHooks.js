@@ -5,22 +5,28 @@ const useMedia = () => {
   const [mediaArray, setMediaArray] = useState([]);
   const {getUserById} = useUser();
   const getMedia = async () => {
-    const mediaResult = await fetchData(
-      import.meta.env.VITE_MEDIA_API + '/media',
-    );
+    try {
+      const mediaResult = await fetchData(
+        import.meta.env.VITE_MEDIA_API + '/media',
+      );
 
-    const mediaWithUser = await Promise.all(
-      mediaResult.map(async (media) => {
-        const userResult = await getUserById(media.user_id);
-        return {...media, username: userResult.username};
-      }),
-    );
-    setMediaArray(mediaWithUser);
+      const mediaWithUser = await Promise.all(
+        mediaResult.map(async (mediaItem) => {
+          const userResult = await getUserById(mediaItem.user_id);
+          return {...mediaItem, username: userResult.username};
+        }),
+      );
+
+      setMediaArray(mediaWithUser);
+    } catch (error) {
+      // console.log(error);
+    }
   };
 
   useEffect(() => {
     getMedia();
   }, []);
+
   return {mediaArray};
 };
 
@@ -76,6 +82,7 @@ const useAuthentication = () => {
     );
     return loginResult;
   };
+
   return {login};
 };
 

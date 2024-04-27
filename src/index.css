@@ -147,3 +147,7 @@ form textarea {
   border: none;
   cursor: pointer;
 } */
+
+nav {
+  display: flex;
+}
